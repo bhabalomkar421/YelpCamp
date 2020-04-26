@@ -1,0 +1,54 @@
+<%- include("partials/header") %>
+
+<link rel ="stylesheet" href="..public/stylesheets/auth.css">
+<div class="container">
+<main class="my-form" style="@import url(https://fonts.googleapis.com/css?family=Raleway:300,400,600);font-family: Raleway, sans-serif;padding-top: 1.5rem;
+        padding-bottom: 1.5rem; margin-left: 0;
+        margin-right: 0;margin: 0;
+        font-size: 2rem;
+        font-weight: 400;
+        line-height: 1.6;
+        color: #212529;
+        text-align: left;
+        background-color: #f5f8fa;
+		text-align: center;
+">
+		<div class="container">
+			<div class="row" style=" display: flex;
+  justify-content: center;">
+				<div class="col-md-8">
+					<div class="card">
+						<div class="card-header"><h4 style="font-style:bold;">Login</h4></div>
+						<div class="card-body">
+							<form name="my-form" action="/login" method="POST">
+								<div class="form-group row">
+									<label for="user_name" class="col-md-4 col-form-label text-md-right">User Name</label>
+									<div class="col-md-6">
+										<input type="text" id="user_name" class="form-control" name="username" placeholder="Username" required>
+									</div>
+								</div>
+
+								<div class="form-group row">
+									<label for="p1" class="col-md-4 col-form-label text-md-right">Password</label>
+									<div class="col-md-6">
+										<input id="p1" class="form-control" type="password" name="password" placeholder="Password" required>
+									</div>
+								</div>
+
+								<div class="col-md-12 offset-md-4">
+									<button type="submit" class="btn btn-primary" name="login" value="Login">
+										Login
+									</button>
+									<br><br>
+									<label id="account">New User..?<a id='link' href="/register">Register here</a></label>
+								</div>
+								<br>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</main>
+</div>
+<%- include("partials/footer") %>
