@@ -1,7 +1,10 @@
 var mongoose = require("mongoose");
 
 //connecting to database
-mongoose.connect("mongodb://localhost/yelp_camp");
+// mongoose.connect("mongodb://localhost/yelp_camp");
+require('dotenv').config();
+const uri = process.env.ATLAS_URI;
+mongoose.connect(uri, { useNewUrlParser : true, useCreateIndex : true, useUnifiedTopology: true });
 
 //schema setup
 var campgroundSchema = new mongoose.Schema({

@@ -17,7 +17,16 @@ var commentRoute = require("./routes/comments");
 var authRoute = require("./routes/auth");
 
 //connecting to database
-mongoose.connect("mongodb://localhost/yelp_camp",{useNewUrlParser: true});
+// mongoose.connect("mongodb://localhost/yelp_camp",{useNewUrlParser: true});
+require('dotenv').config();
+
+const uri = process.env.ATLAS_URI;
+mongoose.connect(uri, { useNewUrlParser : true, useCreateIndex : true, useUnifiedTopology: true });
+
+const connection = mongoose.connection;
+connection.once('open',() => {
+    console.log("MongoDB connection established");
+});
 
 app.set("view engine","ejs");
 app.use(bodyParser.urlencoded({extended : true}));
