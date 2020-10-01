@@ -16,7 +16,7 @@ var campgroundRoute = require("./routes/campgrounds");
 var commentRoute = require("./routes/comments");
 var authRoute = require("./routes/auth");
 
-//connecting to database
+// connecting to database
 // mongoose.connect("mongodb://localhost/yelp_camp",{useNewUrlParser: true});
 require('dotenv').config();
 
