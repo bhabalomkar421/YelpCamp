@@ -20,6 +20,7 @@ var authRoute = require("./routes/auth");
 // mongoose.connect("mongodb://localhost/yelp_camp",{useNewUrlParser: true});
 require('dotenv').config();
 
+const port = process.env.PORT || 3000;
 const uri = process.env.ATLAS_URI;
 mongoose.connect(uri, { useNewUrlParser : true, useCreateIndex : true, useUnifiedTopology: true });
 
@@ -59,6 +60,6 @@ app.use("/",authRoute);
 app.use("/campgrounds",campgroundRoute);
 app.use("/campgrounds/:id/comments",commentRoute);
 
-app.listen("3000",function(){
+app.listen(port, function(){
     console.log("YelpCamp Server Started at port 3000");
 });
