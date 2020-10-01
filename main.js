@@ -21,7 +21,7 @@ var authRoute = require("./routes/auth");
 require('dotenv').config();
 
 const port = process.env.PORT || 3000;
-const uri = process.env.ATLAS_URI || "mongodb+srv://intmain:intmain@11@cluster0.phy2u.mongodb.net/yelp_camp?retryWrites=true&w=majority";
+const uri = process.env.ATLAS_URI;
 
 mongoose.connect(uri, { useNewUrlParser : true, useCreateIndex : true, useUnifiedTopology: true });
 
